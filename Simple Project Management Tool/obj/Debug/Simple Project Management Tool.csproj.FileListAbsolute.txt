@@ -1,0 +1,34 @@
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Simple Project Management Tool.dll.config
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Simple Project Management Tool.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Simple Project Management Tool.pdb
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Entity.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\EntityFramework.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\EntityFramework.SqlServer.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Microsoft.Web.Infrastructure.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Newtonsoft.Json.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Service_Layer.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Net.Http.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Net.Http.WebRequest.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.Helpers.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.Mvc.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.Razor.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.WebPages.Deployment.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.WebPages.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.WebPages.Razor.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Entity.pdb
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Service_Layer.pdb
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\EntityFramework.xml
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\EntityFramework.SqlServer.xml
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Newtonsoft.Json.xml
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Net.Http.xml
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Net.Http.WebRequest.xml
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.Helpers.xml
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.Mvc.xml
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.Razor.xml
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.WebPages.xml
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.WebPages.Deployment.xml
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\System.Web.WebPages.Razor.xml
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\obj\Debug\Simple Project Management Tool.csprojResolveAssemblyReference.cache
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\obj\Debug\Simple Project Management Tool.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\obj\Debug\Simple Project Management Tool.pdb
