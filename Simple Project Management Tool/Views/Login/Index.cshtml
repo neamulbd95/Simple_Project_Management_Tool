@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1 style="text-align:center">Login</h1>
+                @using (Html.BeginForm("checkLogin", "Login"))
+                {
+                    <div class="form-group" style="text-align:center">
+
+                        <input type="email" id="inputUsername" name="userEmail" class="form-control" placeholder="User Email" 
+                               required autofocus>
+                        <br />
+                        <input type="password" id="inputPassword" name="pass" class="form-control" placeholder="Password" required><br />
+                        <div>
+                            <strong>@ViewBag.ErrorMsg</strong>
+                        </div>
+                        <button class="btn btn-primary" name="submitBtn" type="submit">Sign in</button>
+                    </div>
+                }
+            </div>
+            <div class="col-md-4"></div>          
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/Script/bootstrap.min.js"></script>
+    <script src="~/Script/npm.js"></script>
+
+</body>
+</html>

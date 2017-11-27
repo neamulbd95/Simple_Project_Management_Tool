@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Entity.User_Info>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>showUsers</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1 style="text-align:center">Show User</h1><br />
+            <table class="table table-hover table-responsive" id="myTable">
+                <thead>
+                    <tr>
+                        <th align="center">Employee Name</th>
+                        <th align="center">Employee Email</th>
+                        <th align="center">Employee Status</th>
+                        <th align="center">Employee Designation </th>
+                        <th>Option</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td><p>@Html.DisplayFor(modelItem => item.Status)</p></td>
+                            <td>@Html.DisplayFor(modelItem => item.Designation)</td>
+
+                            <td>
+                                <a href="/ItAdminHome/Edit/@item.Id">
+                                    Edit
+                                </a>
+                                &nbsp;
+                                <a href="/ItAdminHome/Delete/@item.Id" style="color:red">
+                                    Delete
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="col-md-4" style="text-align:left">
+                <a href="/ItAdminHome/Index/">
+                    Back to Home
+                </a>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4" style="text-align:right">
+                <p>
+                    @Html.ActionLink("Add User", "addUsers")
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="~/Script/bootstrap.min.js"></script>
+    <script src="~/Script/npm.js"></script>
+</body>
+</html>

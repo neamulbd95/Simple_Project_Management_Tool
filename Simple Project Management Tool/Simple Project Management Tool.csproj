@@ -118,6 +118,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ItAdminHomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -127,7 +129,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Font\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Script\bootstrap.min.js" />
+    <Content Include="Script\npm.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -139,7 +148,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +162,28 @@
       <Project>{f0e2e3be-193b-4fc1-ade1-c8954b8114c6}</Project>
       <Name>Service_Layer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ItAdminHome\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Font\fontawesome-webfont.eot" />
+    <Content Include="Font\fontawesome-webfont.ttf" />
+    <Content Include="Font\fontawesome-webfont.woff" />
+    <Content Include="Font\fontawesome-webfont.woff2" />
+    <Content Include="Font\FontAwesome.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ItAdminHome\showUsers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ItAdminHome\addUsers.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ItAdminHome\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

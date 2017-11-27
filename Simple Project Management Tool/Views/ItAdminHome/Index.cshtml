@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h1 style="text-align:center">Welcome @ViewBag.userTypeName</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <strong>Options</strong>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped">
+                            <tr>
+                                <td align="center"><a href="/ItAdminHome/showUsers/"><i class="fa fa-list-ul fa-2x" aria-hidden="true"></i>&nbsp; <strong>View Users</strong></a></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><a href="/ItAdminHome/addUsers/"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>&nbsp; <strong>Add Users</strong></a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/Script/bootstrap.min.js"></script>
+    <script src="~/Script/npm.js"></script>
+</body>
+</html>
