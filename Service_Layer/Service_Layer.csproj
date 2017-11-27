@@ -46,7 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assign_Person_Service.cs" />
+    <Compile Include="Comment_Service.cs" />
+    <Compile Include="iAssign_Person_Service.cs" />
+    <Compile Include="iComment_Service.cs" />
+    <Compile Include="iProject_Info_Service.cs" />
+    <Compile Include="iProject_Task_Service.cs" />
+    <Compile Include="iUser_Authentication_Service.cs" />
+    <Compile Include="iUser_Info_Service.cs" />
+    <Compile Include="Project_Info_Service.cs" />
+    <Compile Include="Project_Task_Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service_Center.cs" />
+    <Compile Include="User_Authentication_Service.cs" />
+    <Compile Include="User_Info_Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

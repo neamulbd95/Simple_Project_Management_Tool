@@ -32,3 +32,5 @@ E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Sys
 E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\obj\Debug\Simple Project Management Tool.csprojResolveAssemblyReference.cache
 E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\obj\Debug\Simple Project Management Tool.dll
 E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\obj\Debug\Simple Project Management Tool.pdb
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Data_Layer.dll
+E:\asp.Net\Simple Project Management Tool\Simple Project Management Tool\bin\Data_Layer.pdb
