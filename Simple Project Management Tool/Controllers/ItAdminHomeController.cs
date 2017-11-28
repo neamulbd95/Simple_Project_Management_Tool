@@ -120,14 +120,12 @@ namespace Simple_Project_Management_Tool.Controllers
             {
                 if (Request.Form["editBtn"] != null)
                 {
+                    
                     try
                     {
                         User_Info user = new User_Info();
                         user.Id = Convert.ToInt32(Request.Form["id"]);
                         user.Name = Request.Form["Name"];
-                        user.Email = Request.Form["email"];
-                        user.Status = Request.Form["status"];
-                        user.Designation = Request.Form["desig"];
 
                         users.Update(user);
 
@@ -136,12 +134,51 @@ namespace Simple_Project_Management_Tool.Controllers
                     catch (Exception e)
                     {
                         ViewBag.Errormsg = e;
-
+                        Response.Write(e);
                     }
                 }
             }
             return View("Index");
 
+        }
+
+        public ActionResult Delete(int Id)
+        {
+            if (Convert.ToBoolean(Session["loggedOn"]) == true && Convert.ToInt32(Session["userType"]) == 1)
+            {
+                ViewBag.userTypeName = Session["UserTypeName"];
+                ViewBag.userEmail = Session["UserEmail"];
+                return View(users.GetSingleByID(Id));
+            }
+            return View("Index", "Error");
+        }
+
+        public ActionResult DeletingUser()
+        {
+            if (Convert.ToBoolean(Session["loggedOn"]) == true && Convert.ToInt32(Session["userType"]) == 1)
+            {
+                ViewBag.userTypeName = Session["UserTypeName"];
+                ViewBag.userEmail = Session["UserEmail"];
+
+                if (Request.Form["delBtn"] != null)
+                {                    
+                    try
+                    {
+                        int id = Convert.ToInt32(Request.Form["id"]);
+
+                        users.Delete(id);
+
+                        return RedirectToAction("showUsers");
+                    }
+                    catch (Exception e)
+                    {
+                        ViewBag.Errormsg = e;
+                        Response.Write(e);
+                    }
+
+                }
+            }
+            return View("Index", "Error");
         }
     }
 }

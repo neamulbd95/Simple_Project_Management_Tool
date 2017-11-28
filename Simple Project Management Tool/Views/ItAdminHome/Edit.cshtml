@@ -15,6 +15,17 @@
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>  
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> @ViewBag.userTypeName</a></li>
+                <li>
+                    <a href="/Login/LogOut/"><span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
     <div class="container">
         <div class="row">
             <h1 style="text-align:center">Add Employee</h1><br />
@@ -62,7 +73,8 @@
 
                                         <tr>
                                             <td></td>
-                                            <td align="right"><input type="submit" class="btn btn-primary" id="btnSubmit" name="editBtn" value="Edit"></td>
+                                            <td align="right"><input type="submit" class="btn btn-primary" id="btnSubmit" 
+                                                                     name="editBtn" value="Edit"></td>
                                         </tr>
                                     </tbody>
                                 </table>

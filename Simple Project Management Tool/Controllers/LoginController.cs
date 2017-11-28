@@ -55,6 +55,8 @@ namespace Simple_Project_Management_Tool.Controllers
                         Session["UserID"] = users.GetSingleByEmail(userEmail).Id;
                         Session["UserEmail"] = userEmail;
                         Session["loggedOn"] = true;
+
+                        return RedirectToAction("Index", "ProjectManager");
                     }
                     else if (userType == 3)
                     {
@@ -90,6 +92,12 @@ namespace Simple_Project_Management_Tool.Controllers
                     }
                 }
             }
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult LogOut()
+        {
+            Session.Clear();
             return RedirectToAction("Index");
         }
     }

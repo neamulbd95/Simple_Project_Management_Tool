@@ -36,7 +36,6 @@ namespace Data_Layer
         {
             User_Info user = this.context.User_Info.SingleOrDefault(x=> x.Id == userInfo.Id);
             user.Name = userInfo.Name;
-            user.Designation = userInfo.Designation;
 
             this.context.SaveChanges();
         }

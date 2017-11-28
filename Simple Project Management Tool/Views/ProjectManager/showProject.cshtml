@@ -1,8 +1,10 @@
-﻿@model IEnumerable<Entity.User_Info>
+﻿@model IEnumerable<Entity.Project_Info>
 
 @{
     Layout = null;
 }
+
+
 
 <!DOCTYPE html>
 
@@ -32,10 +34,14 @@
             <table class="table table-hover table-responsive" id="myTable">
                 <thead>
                     <tr>
-                        <th align="center">Employee Name</th>
-                        <th align="center">Employee Email</th>
-                        <th align="center">Employee Status</th>
-                        <th align="center">Employee Designation </th>
+                        <th align="center"> Project Name</th>
+                        <th align="center"> Project Code Name</th>
+                        <th align="center"> Project Description</th>
+                        <th align="center"> Project Status</th>
+                        <th align="center"> Project StartDate</th>
+                        <th align="center"> Project EndDate</th>
+                        <th align="center"> Project Duration</th>
+                        <th align="center"> Upload File </th>
                         <th>Option</th>
                     </tr>
                 </thead>
@@ -44,17 +50,17 @@
                     {
                         <tr>
                             <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
-                            <td><p>@Html.DisplayFor(modelItem => item.Status)</p></td>
-                            <td>@Html.DisplayFor(modelItem => item.Designation)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CodeName)</td>
+                            <td><p>@Html.DisplayFor(modelItem => item.Description)</p></td>
+                            <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                            <td>@Html.DisplayFor(modelItem => item.StartDate)</td>                            
+                            <td>@Html.DisplayFor(modelItem => item.EndDate.Date)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Duration)</td>
+                            <td>@Html.DisplayFor(modelItem => item.UploadFile)</td>
 
                             <td>
                                 <a href="/ItAdminHome/Edit/@item.Id">
                                     Edit
-                                </a>
-                                &nbsp;
-                                <a href="/ItAdminHome/Delete/@item.Id" style="color:red">
-                                    Delete
                                 </a>
                             </td>
                         </tr>
@@ -62,20 +68,21 @@
                 </tbody>
             </table>
             <div class="col-md-4" style="text-align:left">
-                <a href="/ItAdminHome/Index/">
+                <a href="/ProjectManager/Index/">
                     Back to Home
                 </a>
             </div>
             <div class="col-md-4"></div>
             <div class="col-md-4" style="text-align:right">
                 <p>
-                    @Html.ActionLink("Add User", "addUsers")
+                    @Html.ActionLink("Add Project", "addProject")
                 </p>
             </div>
         </div>
     </div>
-    
+
     <script src="~/Script/bootstrap.min.js"></script>
     <script src="~/Script/npm.js"></script>
 </body>
 </html>
+

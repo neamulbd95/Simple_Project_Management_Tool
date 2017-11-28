@@ -14,6 +14,9 @@
 <body>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/ItAdminHome/Index"><span class="glyphicon glyphicon-home fa-2x"></span></a>
+            </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> @ViewBag.userTypeName</a></li>
                 <li>
@@ -36,10 +39,19 @@
                     <div class="panel-body">
                         <table class="table table-striped">
                             <tr>
-                                <td align="center"><a href="/ItAdminHome/showUsers/"><i class="fa fa-list-ul fa-2x" aria-hidden="true"></i>&nbsp; <strong>View Users</strong></a></td>
+                                <td align="center"><a href="/ProjectManager/showProject/"><strong>View Projects</strong></a></td>
                             </tr>
                             <tr>
-                                <td align="center"><a href="/ItAdminHome/addUsers/"><i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>&nbsp; <strong>Add Users</strong></a></td>
+                                <td align="center"><a href="/ProjectManager/addProject/"><strong>Add Project</strong></a></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><a href="/ProjectManager/ViewAssignedUser/"><strong>Assigne List of Projects</strong></a></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><a href="/ProjectManager/AssignUser/"><strong>Assign User to a Project</strong></a></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><a href="/ProjectManager/"><strong>Add Task</strong></a></td>
                             </tr>
                         </table>
                     </div>
@@ -53,3 +65,4 @@
     <script src="~/Script/npm.js"></script>
 </body>
 </html>
+

@@ -120,6 +120,7 @@
   <ItemGroup>
     <Compile Include="Controllers\ItAdminHomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProjectManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -148,6 +149,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Files\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +186,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\ItAdminHome\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ItAdminHome\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ProjectManager\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ProjectManager\showProject.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ProjectManager\addProject.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
