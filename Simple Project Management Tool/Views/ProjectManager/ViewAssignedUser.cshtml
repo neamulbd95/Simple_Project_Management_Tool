@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Simple_Project_Management_Tool.Models.AssignProjectList>
+
+@{
+    ViewBag.Title = "ViewAssignedUser";
+}
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>showUsers</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> @ViewBag.userTypeName</a></li>
+                <li>
+                    <a href="/Login/LogOut/"><span class="glyphicon glyphicon-log-out"></span> Log Out</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <h1 style="text-align:center">Show</h1><br />
+            <table class="table table-hover table-responsive" id="myTable">
+                <thead>
+                    <tr>
+                        <th align="center"></th>
+                        <th align="center"> Project Name</th>
+                        <th align="center"> Employee Name</th>
+                        <th align="center"> Employee Designation</th>
+  
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                            <td>@Html.DisplayFor(modelItem => item.projectName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.EmployeeName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.EmployeeDesignation)</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="col-md-4" style="text-align:left">
+                <a href="/ProjectManager/Index/">
+                    Back to Home
+                </a>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+    <script src="~/Script/bootstrap.min.js"></script>
+    <script src="~/Script/npm.js"></script>
+</body>
+</html>
+

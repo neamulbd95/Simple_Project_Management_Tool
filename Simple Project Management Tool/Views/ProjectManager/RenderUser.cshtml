@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Entity.User_Info>
+
+<select name="UserName" class="form-control" id="sel1">
+    @foreach (var item in Model)
+    {
+        if (item.Name != "Mr It xxxx")
+        {
+            <option value="@item.Id">@Html.DisplayFor(modelItem => item.Name)</option>
+        }
+        
+    }
+</select>

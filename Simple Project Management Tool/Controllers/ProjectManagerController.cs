@@ -1,6 +1,8 @@
 ﻿using Entity;
+using Simple_Project_Management_Tool.Models;
 using Service_Layer;
 using System;
+using System.Dynamic;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,7 @@ namespace Simple_Project_Management_Tool.Controllers
         iProject_Info_Service projects = Service_Center.GetProject_Info_Service();
         iProject_Task_Service tasks = Service_Center.GetProject_Task_Service();
         iAssign_Person_Service assiPersons = Service_Center.GetAssign_Person_Service();
+        iUser_Info_Service users = Service_Center.GetUser_Info_Service();
 
         public ActionResult Index()
         {
@@ -104,7 +107,25 @@ namespace Simple_Project_Management_Tool.Controllers
             {
                 ViewBag.userTypeName = Session["UserTypeName"];
                 ViewBag.userEmail = Session["UserEmail"];
-                return View();
+
+                IEnumerable<Assign_Person> assigns = assiPersons.GetAll();
+                List<AssignProjectList> assignModels = new List<AssignProjectList>();
+
+                int id = 0;
+
+                foreach(Assign_Person ap in assigns)
+                {
+                    AssignProjectList assign = new AssignProjectList();
+
+                    assign.Id = ++id;
+                    assign.projectName = projects.GetSingleByID(ap.ProjectID).Name;
+                    assign.EmployeeName = users.GetSingleByID(ap.UserID).Name;
+                    assign.EmployeeDesignation = users.GetSingleByID(ap.UserID).Designation;
+
+                    assignModels.Add(assign);
+                }
+
+                return View(assignModels);
             }
             return View("Index", "Error");
         }
@@ -115,7 +136,75 @@ namespace Simple_Project_Management_Tool.Controllers
             {
                 ViewBag.userTypeName = Session["UserTypeName"];
                 ViewBag.userEmail = Session["UserEmail"];
+
                 return View();
+
+                /*IEnumerable<Project_Info> projectList = projects.GetAll();
+                List<projectListModel> projectModels = new List<projectListModel>();
+
+                foreach(Project_Info pro in projectList)
+                {
+                    projectListModel proModel = new projectListModel();
+
+                    proModel.projectID = pro.Id;
+                    proModel.projectName = pro.Name;
+
+                    projectModels.Add(proModel);
+                }
+
+                IEnumerable<User_Info> userList = users.GetAll();
+                List<UserList> userModelList = new List<UserList>();
+
+                foreach (User_Info user in userList)
+                {
+                    UserList u = new UserList();
+
+                    u.userID = user.Id;
+                    u.userName = user.Name;
+
+                    userModelList.Add(u);
+                }
+
+                dynamic customModel = new ExpandoObject();
+
+                customModel.ProjectList = projectModels;
+                customModel.UserList = userModelList;*/                
+            }
+            return View("Index", "Error");
+        }
+
+        public PartialViewResult RenderProject()
+        {
+            return PartialView(projects.GetAll());
+        }
+
+        public PartialViewResult RenderUser()
+        {
+            return PartialView(users.GetAll());
+        }
+
+        public ActionResult AssignIngUser()
+        {
+            if (Convert.ToBoolean(Session["loggedOn"]) == true && Convert.ToInt32(Session["userType"]) == 2)
+            {
+                ViewBag.userTypeName = Session["UserTypeName"];
+                ViewBag.userEmail = Session["UserEmail"];
+                if (Request.Form["SubmitName"] != null)
+                {
+                    Assign_Person asp = new Assign_Person();
+                    asp.ProjectID = Convert.ToInt32(Request.Form["ProjectName"]);
+                    asp.UserID = Convert.ToInt32(Request.Form["UserName"]);
+
+                    try
+                    {
+                        assiPersons.Insert(asp);
+                        return View("Index");
+                    }
+                    catch(Exception e)
+                    {
+                        Response.Write(e);
+                    }
+                }
             }
             return View("Index", "Error");
         }
