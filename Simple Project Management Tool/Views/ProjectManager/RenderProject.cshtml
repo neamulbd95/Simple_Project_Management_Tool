@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Entity.Project_Info>
 
-<select name="ProjectName" class="form-control" id="sel1">
+<select name="ProjectName" class="form-control" id="projectID">
     @foreach (var item in Model)
     {
         <option value="@item.Id">@Html.DisplayFor(modelItem => item.Name)</option>

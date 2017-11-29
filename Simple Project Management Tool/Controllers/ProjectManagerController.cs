@@ -222,5 +222,46 @@ namespace Simple_Project_Management_Tool.Controllers
             return View("Index", "Error");
         }
 
+        public ActionResult addTask()
+        {
+            if (Convert.ToBoolean(Session["loggedOn"]) == true && Convert.ToInt32(Session["userType"]) == 2)
+            {
+                ViewBag.userTypeName = Session["UserTypeName"];
+                ViewBag.userEmail = Session["UserEmail"];
+                return View();
+            }
+            return View("Index", "Error");
+        }
+
+        public ActionResult AddingTask()
+        {
+            if (Convert.ToBoolean(Session["loggedOn"]) == true && Convert.ToInt32(Session["userType"]) == 2)
+            {
+                ViewBag.userTypeName = Session["UserTypeName"];
+                ViewBag.userEmail = Session["UserEmail"];
+                if (Request.Form["SubmitName"] != null)
+                {
+                    Project_Task task = new Project_Task();
+
+                    task.ProjectID = Convert.ToInt32(Request.Form["ProjectName"]);
+                    task.UserID = Convert.ToInt32(Request.Form["user"]);
+                    task.Description = Request.Form["description"];
+                    task.DueDate = Convert.ToDateTime(Request.Form["dueDate"]);
+                    task.Priority = Request.Form["priority"];
+
+                    try
+                    {
+                        tasks.Insert(task);
+                        return RedirectToAction("Index");
+                    }
+                    catch (Exception e)
+                    {
+                        Response.Write(e);
+                    }
+                }
+            }
+            return View("Index", "Error");
+        }
+
     }
 }
