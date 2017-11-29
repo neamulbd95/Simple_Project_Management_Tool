@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Simple_Project_Management_Tool.Models.AssignProjectList>
+﻿@model IEnumerable<Simple_Project_Management_Tool.Models.ViewTasksModel>
 
 @{
-    ViewBag.Title = "ViewAssignedUser";
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -27,37 +27,38 @@
         </div>
     </nav>
     <div class="container">
+        <h1 style="text-align:center">@ViewBag.ProjectName Tasks</h1>
+        <h4 style="text-align:center">Total Task of this project : @ViewBag.TotalTask</h4>
         <div class="row">
-            <h1 style="text-align:center">Show</h1><br />
             <table class="table table-hover table-responsive" id="myTable">
                 <thead>
                     <tr>
                         <th align="center"></th>
-                        <th align="center"> Project Name</th>
-                        <th align="center"> Employee Name</th>
-                        <th align="center"> Employee Designation</th>
-  
+                        <th align="center">Assign To</th>
+                        <th align="center">Description</th>
+                        <th align="center">Due Date</th>
+                        <th align="center">Priority</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>@Html.DisplayFor(modelItem => item.Id)</td>
-                            <td>@Html.DisplayFor(modelItem => item.projectName)</td>
-                            <td>@Html.DisplayFor(modelItem => item.EmployeeName)</td>
-                            <td>@Html.DisplayFor(modelItem => item.EmployeeDesignation)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Serial)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AssignTo)</td>
+                            <td><p>@Html.DisplayFor(modelItem => item.Description)</p></td>
+                            <td>@Html.DisplayFor(modelItem => item.DueDate)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Status)</td>
 
                         </tr>
                     }
                 </tbody>
             </table>
             <div class="col-md-4" style="text-align:left">
-                <a href="/ProjectManager/Index/">
+                <a href="/Others/Index/">
                     Back to Home
                 </a>
             </div>
-            <div class="col-md-4"></div>
         </div>
     </div>
 
@@ -65,4 +66,3 @@
     <script src="~/Script/npm.js"></script>
 </body>
 </html>
-

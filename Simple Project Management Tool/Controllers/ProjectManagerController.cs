@@ -263,5 +263,64 @@ namespace Simple_Project_Management_Tool.Controllers
             return View("Index", "Error");
         }
 
+        public ActionResult viewTask(int Id)
+        {
+            if (Convert.ToBoolean(Session["loggedOn"]) == true && Convert.ToInt32(Session["userType"]) == 2)
+            {
+                ViewBag.userTypeName = Session["UserTypeName"];
+                ViewBag.userEmail = Session["UserEmail"];
+
+                ViewBag.ProjectName = projects.GetSingleByID(Id).Name;
+                ViewBag.TotalTask = tasks.TotalRow(Id);
+
+                IEnumerable<Project_Task> TaskList = tasks.GetByProjectID(Id);
+                List<ViewTasksModel> TaskModelList = new List<ViewTasksModel>();
+                int c = 0;
+
+                foreach(Project_Task task in TaskList)
+                {
+                    ViewTasksModel t = new ViewTasksModel();
+
+                    t.Serial = ++c;
+                    t.AssignTo = users.GetSingleByID(task.UserID).Name;
+                    t.Description = task.Description;
+                    t.Status = task.Priority;
+                    t.DueDate = task.DueDate.Date;
+
+                    TaskModelList.Add(t);
+                }
+
+                return View(TaskModelList);
+            }
+            return View("Index", "Error");
+        }
+
+        public ActionResult viewMembers(int Id)
+        {
+            if (Convert.ToBoolean(Session["loggedOn"]) == true && Convert.ToInt32(Session["userType"]) == 2)
+            {
+                ViewBag.userTypeName = Session["UserTypeName"];
+                ViewBag.userEmail = Session["UserEmail"];
+
+                ViewBag.ProjectName = projects.GetSingleByID(Id).Name;
+                ViewBag.TotalMember = assiPersons.TotalRow(Id);
+
+                IEnumerable<Assign_Person> AssignPersonList = assiPersons.GetByProject(Id);
+                List<ViewProjectMemberModel> projectMemberList = new List<ViewProjectMemberModel>();
+
+                foreach(Assign_Person asp in AssignPersonList)
+                {
+                    ViewProjectMemberModel member = new ViewProjectMemberModel();
+
+                    member.memberName = users.GetSingleByID(asp.UserID).Name;
+                    member.memberDesignation = users.GetSingleByID(asp.UserID).Designation;
+
+                    projectMemberList.Add(member);
+                }
+
+                return View(projectMemberList);
+            }
+            return View("Index", "Error");
+        }
     }
 }

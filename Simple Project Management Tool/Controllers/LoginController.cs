@@ -65,6 +65,8 @@ namespace Simple_Project_Management_Tool.Controllers
                         Session["UserID"] = users.GetSingleByEmail(userEmail).Id;
                         Session["UserEmail"] = userEmail;
                         Session["loggedOn"] = true;
+
+                        return RedirectToAction("Index", "Others");
                     }
                     else if (userType == 4)
                     {
@@ -73,6 +75,8 @@ namespace Simple_Project_Management_Tool.Controllers
                         Session["UserID"] = users.GetSingleByEmail(userEmail).Id;
                         Session["UserEmail"] = userEmail;
                         Session["loggedOn"] = true;
+
+                        return RedirectToAction("Index", "Others");
                     }
                     else if (userType == 5)
                     {
@@ -81,6 +85,8 @@ namespace Simple_Project_Management_Tool.Controllers
                         Session["UserID"] = users.GetSingleByEmail(userEmail).Id;
                         Session["UserEmail"] = userEmail;
                         Session["loggedOn"] = true;
+
+                        return RedirectToAction("Index", "Others");
                     }
                     else if (userType == 6)
                     {
@@ -89,6 +95,8 @@ namespace Simple_Project_Management_Tool.Controllers
                         Session["UserID"] = users.GetSingleByEmail(userEmail).Id;
                         Session["UserEmail"] = userEmail;
                         Session["loggedOn"] = true;
+
+                        return RedirectToAction("Index", "Others");
                     }
                 }
             }

@@ -51,19 +51,19 @@
                             <td>@Html.DisplayFor(modelItem => item.CodeName)</td>
                             <td><p>@Html.DisplayFor(modelItem => item.Description)</p></td>
                             <td>@Html.DisplayFor(modelItem => item.Status)</td>
-                            <td>@Html.DisplayFor(modelItem => item.StartDate)</td>                            
+                            <td>@Html.DisplayFor(modelItem => item.StartDate)</td>
                             <td>@Html.DisplayFor(modelItem => item.EndDate.Date)</td>
                             <td>@Html.DisplayFor(modelItem => item.Duration)</td>
                             <td>@Html.DisplayFor(modelItem => item.UploadFile)</td>
 
                             <td>
-                                <a href="/ProjectManager/viewMembers/@item.Id">
+                                <a href="/Others/viewMembers/@item.Id">
                                     View Members
                                 </a>
                             </td>
 
                             <td>
-                                <a href="/ProjectManager/viewTask/@item.Id">
+                                <a href="/Others/viewTask/@item.Id">
                                     View Tasks
                                 </a>
                             </td>
@@ -72,20 +72,15 @@
                 </tbody>
             </table>
             <div class="col-md-4" style="text-align:left">
-                <a href="/ProjectManager/Index/">
+                <a href="/Others/Index/">
                     Back to Home
                 </a>
             </div>
             <div class="col-md-4"></div>
-            <div class="col-md-4" style="text-align:right">
-                <p>
-                    @Html.ActionLink("Add Project", "addProject")
-                </p>
-            </div>
         </div>
     </div>
 
     <script src="~/Script/bootstrap.min.js"></script>
     <script src="~/Script/npm.js"></script>
 </body>
-</html>
+</h
